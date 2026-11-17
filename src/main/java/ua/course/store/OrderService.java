@@ -16,7 +16,7 @@ public class OrderService {
         if (unitPrice<100 || unitPrice>1000000) throw new IllegalArgumentException("Ціна поза допустимим діапазоном");
         validateQuantity(quantity);
         long subtotal = unitPrice * quantity;
-        int discountPercent = subtotal >= 140000 && !onSale ? 12 : 0;
+        int discountPercent = subtotal >= 140000 && !onSale ? 10 : 0;
         return subtotal - subtotal * discountPercent / 100;
     }
     public Order placeOrder(OrderRequest request) throws SQLException {
